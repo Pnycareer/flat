@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  // baseURL: 'http://localhost:8000/api',
-  baseURL: 'https://www.api.zianshahlegalconsultant.com/api',
+  baseURL: 'http://localhost:8000/api',
+  // baseURL: 'https://www.api.zianshahlegalconsultant.com/api',
   headers: {
     'Content-Type': 'application/json'
   },

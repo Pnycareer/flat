@@ -90,9 +90,9 @@ const DailyEntries = () => {
               <tr className="text-left">
                 <th className="px-4 py-3 border">Date</th>
                 <th className="px-4 py-3 border">Room</th>
-                <th className="px-4 py-3 border text-green-700">Income (₹)</th>
-                <th className="px-4 py-3 border text-yellow-700">Other Expenses (₹)</th>
-                <th className="px-4 py-3 border text-blue-700">Profit / Loss (₹)</th>
+                <th className="px-4 py-3 border text-green-700">Income</th>
+                <th className="px-4 py-3 border text-yellow-700">Other Expenses</th>
+                <th className="px-4 py-3 border text-blue-700">Profit / Loss</th>
               </tr>
             </thead>
             <tbody>
