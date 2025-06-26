@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { loginUser } from '../../hooks/useAuthApi';
 
@@ -8,13 +8,16 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/dashboard';
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const res = await loginUser({ email, password });
       login(res.user, res.token);
-      navigate('/dashboard');
+      navigate(from, { replace: true }); // <-- send user back
     } catch (err) {
       console.error(err);
       alert(err?.response?.data?.message || 'Login failed');
