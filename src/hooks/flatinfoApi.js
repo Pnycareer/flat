@@ -19,16 +19,6 @@ export const fetchReportsByMonth = async (month, year) => {
   return res.data;
 };
 
-
-// export const fetchDailyEntries = async ({ room, month }) => {
-//   const params = new URLSearchParams();
-//   if (room) params.append('room', room);
-//   if (month) params.append('month', month);
-//   const res = await axiosInstance.get(`/flatinfo/daily?${params.toString()}`);
-//   return res.data;
-// };
-
-
 // src/hooks/flatinfoApi.js
 export const fetchDailyEntries = async ({ room, month, year }) => {
   const params = new URLSearchParams();
@@ -38,4 +28,10 @@ export const fetchDailyEntries = async ({ room, month, year }) => {
   const res = await axiosInstance.get(`/flatinfo/daily?${params.toString()}`);
   return res.data;
 };
+
+export const deleteMonthlySummary = async (id) => {
+  const res = await axiosInstance.delete(`/flatinfo/monthly/${id}`);
+  return res.data;
+};
+
 
